@@ -39,27 +39,31 @@ class PostAPI extends BaseAPI {
 	}
 	// parse post function to parse posts and converting as simple arrays
 	public function parsePost($post){
-		
-		$postData = array();
-		$postData['id'] = $post->id;
-		$postData['title'] = $post->title;
-		$postData['slug'] = $post->slug;
-		$postData['url'] =  Yii::app()->createAbsoluteUrl('/news/'.$post->id.'/'.$post->slug);
-		$postData['description'] = $post->description;
-		$postData['source'] = $post->source;
-		$postData['source_title'] = $post->source_title;
-		$postData['created_dt'] = $this->time2StringFormatted($post->created_dt);
-		$postData['updated_dt'] = $this->time2StringFormatted($post->updated_dt);
-		$postData['image'] = $post->image != '' ? Yii::app()->request->hostInfo . Yii::app()->request->baseUrl . '/static/' . $post->image : Yii::app()->request->hostInfo . Yii::app()->request->baseUrl . '/static/default_image.png';
-		$postData['category'] = array();
-		if($post->cat_id){
-			$postData['category']['cat_id'] = $post->cat_id;
-			$postData['category']['title'] = $post->Cat->title;
-		}
-		$postData['author'] = array();
-		if($post->user_id){
-			$postData['author']['user_id'] = $post->user_id;
-			$postData['author']['user_full_name'] = $post->User->user_full_name;
+		//Adding check to see if category exists or not
+		if(isset($post->Cat)&&$post->Cat!=NULL){
+			$postData = array();
+			$postData['id'] = $post->id;
+			$postData['title'] = $post->title;
+			$postData['slug'] = $post->slug;
+			$postData['url'] =  Yii::app()->createAbsoluteUrl('/news/'.$post->id.'/'.$post->slug);
+			$postData['description'] = $post->description;
+			$postData['source'] = $post->source;
+			$postData['source_title'] = $post->source_title;
+			$postData['created_dt'] = $this->time2StringFormatted($post->created_dt);
+			$postData['updated_dt'] = $this->time2StringFormatted($post->updated_dt);
+			$postData['image'] = $post->image != '' ? Yii::app()->request->hostInfo . Yii::app()->request->baseUrl . '/static/' . $post->image : Yii::app()->request->hostInfo . Yii::app()->request->baseUrl . '/static/default_image.png';
+			$postData['category'] = array();
+			if($post->cat_id){
+				$postData['category']['cat_id'] = $post->cat_id;
+				$postData['category']['title'] = $post->Cat->title;
+			}
+			$postData['author'] = array();
+			if($post->user_id){
+				$postData['author']['user_id'] = $post->user_id;
+				$postData['author']['user_full_name'] = $post->User->user_full_name;
+			}
+		}else{
+			$postData = [];
 		}
 		return $postData;
 		
