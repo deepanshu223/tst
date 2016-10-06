@@ -16,7 +16,7 @@ class ApiModule extends CWebModule
             return false;
    }
    // converting data to json format
-	public function apiReturn($data){
+	public function apiReturn($data){		
 		$status_header = 'HTTP/1.1 ' . $data['status'] . ' ' . $this->_getStatusCodeMessage($data['status']);
     	header($status_header);
     	header('Content-type: ' . 'application/json');

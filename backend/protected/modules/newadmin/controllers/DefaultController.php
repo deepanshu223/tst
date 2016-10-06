@@ -287,9 +287,9 @@ class DefaultController extends Controller {
 		if($post_id){
 			$adminAPI->sendNotificationAndroid($post_id);
 			Yii::app()->user->setFlash('success', "Sent sucessfully!");
-			  $this->redirect(array(
+			  /*$this->redirect(array(
 					'default/posts/'
-			  ));
+			  ));*/
 		}
 	}
 	//url create action

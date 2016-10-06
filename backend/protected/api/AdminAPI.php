@@ -498,7 +498,6 @@ class AdminAPI extends BaseAPI {
 		curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
 		$result = curl_exec($ch );
 		curl_close( $ch );
-		var_dump($result);exit;
 		return true;
 		//echo $result;
 	
