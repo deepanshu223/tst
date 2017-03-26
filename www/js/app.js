@@ -1,8 +1,9 @@
 app.constant("Config", {
   "WebUrl": "http://news.ascian.in/api/",
-  "AppName" : "Ascian News",
+  "AppName" : "The Startup Today",
   "AndroidAppUrl" : "https://play.google.com/store/apps/details?id=com.myspecialgames.advanced2048game",
-  "ErrorMessage" : "End of results"
+  "FacebookUrl" : "https://play.google.com/store/apps/details?id=com.myspecialgames.advanced2048game",
+  "ErrorMessage" : "No more news"
 })
 // config contact
 app.constant("ConfigContact", {

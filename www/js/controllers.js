@@ -88,7 +88,7 @@ app.controller('NewsCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','Color'
 	}
 }])
 /* recent posts controller */
-app.controller('HomeCtrl', ['$scope', 'NewsApp', '$state', 'Config', '$cordovaToast', 'ConfigAdmob', function($scope, NewsApp, $state, Config, $cordovaToast, ConfigAdmob) {	
+app.controller('HomeCtrl', ['$scope', 'NewsApp', '$state', 'Config', '$cordovaToast', 'ConfigAdmob','$ionicScrollDelegate', function($scope, NewsApp, $state, Config, $cordovaToast, ConfigAdmob, $ionicScrollDelegate) {	
 	// setting header -- 
 	$scope.heading = Config.AppName;
 	$scope.items = [];
@@ -437,6 +437,7 @@ app.controller('ContactCtrl', ['$scope', 'ConfigContact', function($scope, Confi
 						subject: ConfigContact.ContactSubject,
 						body:    '<h1>'+$scope.user.email+'</h1><br><h2>'+$scope.user.name+'</h2><br><p>'+$scope.user.details+'</p>',
 						isHtml:  true
+					},function(){//do nothing
 					});
 				}
 			);

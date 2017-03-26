@@ -39,6 +39,10 @@
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .button, input, textarea { 
 	font-family: 'Source Sans Pro', sans-serif; 
 }
+body{
+	height:100%;
+	width:100%;
+}
 a { 
 	text-decoration: none; 
 }
@@ -74,4 +78,37 @@ img {
 .item-post-main h2{
   font-size: 20px;
   margin-top: 0;
+  margin-bottom: 0px;
+}
+
+.has-header{
+	top:7.8vh;
+}
+.bar.bar-positive{
+    background: -webkit-linear-gradient(top left, #f32924, #ffc89b);
+    background: linear-gradient(top left, #f32924, #ffc89b);
+	height: 8vh;
+}
+.list{
+	height: 100vh;
+	margin-bottom:0px;
+}
+.item-image{
+	height: 30vh;
+}
+.item.tabs{
+	height: 7.2vh;
+}
+.item-body{
+	    height: 55vh;
+}
+p.byline{
+	margin: 0px;
+	margin-top:5px;
+    font-size: 12px !important;
+    color: #000;
+    line-height: 100%;
+}
+.card-body p{
+	margin-top:8px;
 }

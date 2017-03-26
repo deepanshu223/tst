@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.pgb.brewapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-	<name>Ascian News</name>
+	<name>TheStartupToday</name>
 	<description>
 		This app delivers tiny startup news.
 	</description>
@@ -9,13 +9,13 @@
 	   Ascian
 	</author>
 
-	<preference name="phonegap-version" value="cli-6.0.0" />
+	<preference name="phonegap-version" value="cli-6.3.0" />
 
 	<plugin name="cordova-plugin-device" />
     <plugin name="cordova-plugin-inappbrowser" />    
     <plugin name="cordova-plugin-splashscreen" />    
     <plugin name="cordova-plugin-admobpro" />    
-	<plugin name="cordova-plugin-email-composer" />
+	<plugin name="cordova-plugin-email-composer" version="0.8.3" />
 	<plugin name="cordova-plugin-x-socialsharing" />
 	<plugin name="cordova-plugin-pushplugin" />
 	<!-- <plugin name="phonegap-plugin-push">
@@ -25,6 +25,27 @@
 	<plugin name="cordova-plugin-x-toast"/>
 	<plugin name="cordova-plugin-dialogs"/>
 	<plugin name="com.darktalker.cordova.screenshot" />
+	
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
+	<preference name="orientation" value="portrait" />
+	
+	<platform name="android">
+		<icon src="splash.png" />
+		<icon src="img/icons/mdpi.png" qualifier="mdpi" />
+		<icon src="img/icons/hdpi.png" qualifier="hdpi" />
+		<icon src="img/icons/xhdpi.png" qualifier="xhdpi" />
+		<icon src="img/icons/xxhdpi.png" qualifier="xxhdpi" />
+		<icon src="img/icons/xxxhdpi.png" qualifier="xxxhdpi" />
+		
+		<splash src="splash.png" />
+		<splash src="img/splash/ldpi.png"  qualifier="ldpi" />
+		<splash src="img/splash/mdpi.png"  qualifier="mdpi" />
+		<splash src="img/splash/hdpi.png"  qualifier="hdpi" />
+		<splash src="img/splash/xhdpi.png"  qualifier="xhdpi" />
+		<splash src="img/splash/xxhdpi.png"  qualifier="xxhdpi" />
+		<splash src="img/splash/xxxhdpi.png"  qualifier="xxxhdpi" />
+	</platform>
 	
 	<access origin="*"/>
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->

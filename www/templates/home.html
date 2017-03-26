@@ -10,23 +10,25 @@
         </div>
         <div class="item item-body item-post-main">
         		<h2>{{item.title}}</h2>
-          	<p>{{item.created_dt}} by {{item.author.user_full_name}} from {{item.source_title}}</p>
-        		<div ng-bind-html="item.description | cut:true:200:' ...'">
+          	<!-- <p>{{item.created_dt}} by {{item.author.user_full_name}} from {{item.source_title}}</p> -->
+				<p class="byline">{{item.created_dt}}</p>
+        		<!-- <div class="card-body" ng-bind-html="item.description | cut:true:500:' ...'"> -->
+        		<div class="card-body" ng-bind-html="item.description">
           	</div>
         </div>
         <div class="item tabs tabs-secondary tabs-icon-left">
-          <a class="tab-item" ng-click="readMore($index);">
+          <!-- <a class="tab-item" ng-click="readMore($index);">
             <i class="icon ion-android-open"></i>
             Read more
-          </a>
+          </a> -->
           <a class="tab-item" ng-show="item.source" ng-click="openLinkArticle(item.source)">
             <i class="icon ion-ios-paper"></i>
             Full news
           </a>
-          <a class="tab-item" ng-click="shareArticle(item.title,item.url);">
+          <!-- <a class="tab-item" ng-click="shareArticle(item.title,item.url);">
             <i class="icon ion-share"></i>
             Share
-          </a>
+          </a> -->
         </div>
       
       </div>
