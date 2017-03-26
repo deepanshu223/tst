@@ -5,11 +5,13 @@
 		This app delivers tiny startup news.
 	</description>
 
-	<author email="ascian.india@gmail.com" href="https://www.ascian.in">
+	<author email="ascian.india@gmail.com" href="https://thestartuptoday.com">
 	   Ascian
 	</author>
+	<preference name="android-minSdkVersion"      value="15" />
+    <preference name="android-targetSdkVersion"   value="15" /> 
 
-	<preference name="phonegap-version" value="cli-6.3.0" />
+	<preference name="phonegap-version" value="cli-6.5.0" />
 
 	<plugin name="cordova-plugin-device" />
     <plugin name="cordova-plugin-inappbrowser" />    
