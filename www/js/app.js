@@ -1,8 +1,8 @@
 app.constant("Config", {
   "WebUrl": "http://news.ascian.in/api/",
   "AppName" : "The Startup Today",
-  "AndroidAppUrl" : "https://play.google.com/store/apps/details?id=com.myspecialgames.advanced2048game",
-  "FacebookUrl" : "https://play.google.com/store/apps/details?id=com.myspecialgames.advanced2048game",
+  "AndroidAppUrl" : "https://play.google.com/store/apps/details?id=com.thestartuptoday.news",
+  "FacebookUrl" : "https://www.facebook.com/Thestartuptoday",
   "ErrorMessage" : "No more news"
 })
 // config contact
@@ -12,12 +12,12 @@ app.constant("ConfigContact", {
 })
 // config admon
 app.constant("ConfigAdmob", {
-  "interstitial": "ca-app-pub-3940256099942544/1033173712",
-  "banner": "ca-app-pub-3940256099942544/6300978111"
+  "interstitial": "ca-app-pub-2144706194397564/3023740135",
+  "banner": "ca-app-pub-2144706194397564/1547006933"
 })
 // color variations
 app.constant("Color", {
-  "AppColor": "positive", //light, stable, positive, calm, balanced, energized, assertive, royal, dark
+  "AppColor": "assertive", //light, stable, positive, calm, balanced, energized, assertive, royal, dark
 })
 // push notification
 app.constant("PushNoti", {

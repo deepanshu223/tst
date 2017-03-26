@@ -112,3 +112,5 @@ p.byline{
 .card-body p{
 	margin-top:8px;
 }
+.bar.bar-assertive{
+	background: #ee8585;

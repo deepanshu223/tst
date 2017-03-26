@@ -16,6 +16,18 @@ app.run(function($ionicPlatform) {
       // remove the status bar on iOS or change it to use white instead of dark colors.
       StatusBar.styleDefault();
     }
+	/*Google Analytics*/
+	var googleanalyticsApp = angular.module('googleanalytics', ['ionic'])
+    .run(function($ionicPlatform, $ionicPopup) {
+        $ionicPlatform.ready(function() {
+            if(typeof analytics !== undefined) {
+                analytics.startTrackerWithId("UA-96228315-1");
+            } else {
+                console.log("Google Analytics Unavailable");
+            }
+        });
+    });
+	
   });
 });
 //app run getting device id
