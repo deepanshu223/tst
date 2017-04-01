@@ -52,7 +52,26 @@ class Controller extends CController
     	if ( !empty($this->pageOgImage) ) {
         	echo "\t".'<meta property="og:image" content="',CHtml::encode($this->pageOgImage),'">'.PHP_EOL;
     	}
-		
+		if ( !empty($this->pageOrgLink) ) {
+        	echo "\t".'<meta property="og:url" content="',CHtml::encode($this->pageOrgLink),'">'.PHP_EOL;
+    	} elseif ( !empty($this->pageCanonial) ) {
+        	echo "\t".'<meta property="og:url" content="',CHtml::encode($this->pageCanonial),'">'.PHP_EOL;
+    	}
+		if ( !empty($this->pageOgType) ) {
+        	echo "\t".'<meta property="og:type" content="',CHtml::encode($this->pageOgType),'">'.PHP_EOL;
+    	}
+		//Twitter card
+		if ( !empty($this->pageOgTitle) ) {
+			echo "\t".'<meta name="twitter:card" content="summary_large_image">'.PHP_EOL;
+			echo "\t".'<meta name="twitter:site" content="@thestartuptoday">'.PHP_EOL;
+        	echo "\t".'<meta property="twitter:title"" content="',CHtml::encode($this->pageOgTitle),'">'.PHP_EOL;
+    	}
+    	if ( !empty($this->pageOgDesc) ) {
+        	echo "\t".'<meta property="twitter:description" content="',CHtml::encode($this->pageOgDesc),'">'.PHP_EOL;
+    	}
+    	if ( !empty($this->pageOgImage) ) {
+        	echo "\t".'<meta property="twitter:image" content="',CHtml::encode($this->pageOgImage),'">'.PHP_EOL;
+    	}
 		if ( !empty($this->pageOrgLink) ) {
         	echo "\t".'<meta property="og:url" content="',CHtml::encode($this->pageOrgLink),'">'.PHP_EOL;
     	} elseif ( !empty($this->pageCanonial) ) {

@@ -639,7 +639,7 @@
 							</li>
 							
 							<li>
-								<a href='#' >
+								<a href='https://twitter.com/thestartuptoday' >
 									<i class='ion-social-twitter' ></i>
 								</a>
 							</li>
