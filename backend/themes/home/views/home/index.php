@@ -666,6 +666,15 @@
 		<script src='<?php echo $urlBase; ?>/themes/home/js/validator.min.js' ></script>
 		<script src='<?php echo $urlBase; ?>/themes/home/js/smooth-scroll.min.js' ></script>
 		<script src='<?php echo $urlBase; ?>/themes/home/js/script.js' ></script>
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-96228315-2', 'auto');
+		ga('send', 'pageview');
+		</script>
 		
 	</body>
 </html>
