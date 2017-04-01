@@ -25,19 +25,17 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<?php echo CHtml::link('Home',array('/site/index/'),array('class'=>'navbar-brand','title'=>'Home')); ?>
+<?php echo CHtml::link('Home',array('/home/index/'),array('class'=>'navbar-brand','title'=>'Home')); ?>
 </div>
 <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 <ul class="nav navbar-nav">
-<li>
-<?php echo CHtml::link('Top News',array('/category/top-news/'),array('title'=>'Top News')); ?>
-</li>
-<li>
-<?php echo CHtml::link('Sports',array('/category/sports/'),array('title'=>'Sports')); ?>
-</li>
-<li>
-<?php echo CHtml::link('Entertainment',array('/category/entertainment/'),array('title'=>'Entertainment')); ?>
-</li>
+<?php $categories = $this->getCategories();
+	foreach($categories as $cat){
+		echo "<li>";
+		echo CHtml::link($cat['title'],array('/category/'.$cat['slug']),array('title'=>$cat['title']));
+		echo "</li>";
+	}
+?>
 </ul>
 <form method="get" action="<?php echo Yii::app()->createAbsoluteUrl('/site/search') ?>" class="navbar-form navbar-left pull-right" role="search">
   <div class="form-group">

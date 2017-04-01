@@ -2,6 +2,25 @@
 
 class SiteController extends Controller {
    
+   //getting all categories
+	public function getCategories(){
+		$cats = NeCategory::model()->findAll();
+		$dataReturn = array();
+		if($cats){
+			foreach($cats as $cat){
+				$singleCat = array();
+				$singleCat['cat_id'] = $cat->cat_id;
+				$singleCat['title'] = $cat->title;
+				$singleCat['slug'] = $cat->slug;
+				$singleCat['image'] = $cat->image != '' ? Yii::app()->request->hostInfo . Yii::app()->request->baseUrl . '/static/' . $cat->image : Yii::app()->request->hostInfo . Yii::app()->request->baseUrl . '/static/default_image.png';;
+				array_push($dataReturn, $singleCat);
+			}
+			return $dataReturn;
+		} else {
+			return false;
+		}
+	}
+	
    public function init() {
       Yii::app()->theme = 'newsapp';
       $this->layout = "main";
@@ -165,6 +184,14 @@ class SiteController extends Controller {
 		} else {
 			$this->redirect(Yii::app()->params->site_url);
 		}
+	}
+	
+	public function actionError(){
+		$error=Yii::app()->errorHandler->error;
+		if($error['code']!=404)
+			$this->render('error');
+		else
+			$this->render('error404');
 	}
    
 }

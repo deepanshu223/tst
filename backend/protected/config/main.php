@@ -2,7 +2,7 @@
 require(dirname(__FILE__).'/config.php');
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'News App',
+	'name'=>'The Startup Today',
 	
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -47,9 +47,10 @@ return array(
 			'showScriptName'=>false,
 			'urlSuffix' => '/',
 			'rules'=>array(
+				'/'=>'home/index',
 				'/page/<page:\d+>/*'=>'site/index',
-				'/'=>'site/index',
 				'/news/<id:\d+>/<slug:[\w\-.]+>/*'=>'/site/post',
+				'/news/'=>'site/index',
 				'/category/<category:[\w\-.]+>/*'=>'/site/category',
 				'/search/*'=>'/site/search',
 				'/search-form/'=>'/site/searchform',

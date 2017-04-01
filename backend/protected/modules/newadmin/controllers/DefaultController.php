@@ -287,9 +287,23 @@ class DefaultController extends Controller {
 		if($post_id){
 			$adminAPI->sendNotificationAndroid($post_id);
 			Yii::app()->user->setFlash('success', "Sent sucessfully!");
-			  /*$this->redirect(array(
+			  $this->redirect(array(
 					'default/posts/'
-			  ));*/
+			  ));
+		}
+	}
+	//Togle publish status
+	public function actionTogglePublish(){
+		$post_id = isset($_GET['id']) ? $_GET['id'] : '';
+		$adminAPI = new AdminAPI;
+		if($post_id){
+			if($adminAPI->toggleAdminPost($post_id) == "published")
+				Yii::app()->user->setFlash('success', "Post publised!");
+			else
+				Yii::app()->user->setFlash('success', "Post Drafted!");
+			  $this->redirect(array(
+					'default/posts/'
+			  ));
 		}
 	}
 	//url create action

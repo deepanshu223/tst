@@ -1,7 +1,8 @@
+<div class="clearfix"></div>
 <footer id="footer">
 <div class="container">
 <p class="footer-p">
-Copyright © 2015 <?php echo Yii::app()->params->site_name; ?>
+Copyright © 2017 <?php echo Yii::app()->params->site_name; ?>
 </p>
 </div>
 </footer>

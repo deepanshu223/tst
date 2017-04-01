@@ -13,7 +13,7 @@ class Controller extends CController
 	public $currentActionFeed;
 	public $currentContrFeed;
 	
-	public $pageTitle = 'Tiny News';
+	public $pageTitle = "The Startup Today";
    public $pageDesc = '';
    public $pageRobotsIndex = "true";
 	public $pageRobotsFollow = "true";

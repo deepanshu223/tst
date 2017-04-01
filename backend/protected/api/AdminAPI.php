@@ -360,6 +360,20 @@ class AdminAPI extends BaseAPI {
 		}
 	
 	}
+	
+	public function toggleAdminPost($id) {
+		$Model = NePosts::model()->findByPk($id);
+		if($Model->status=="draft")
+			$Model->status = "published";
+		else
+			$Model->status = "draft";
+	 	$status = $Model->save();
+		if ($status){
+			return $Model->status;
+		}
+	
+	}
+	
 	/*
 	get post details with id
 	*/

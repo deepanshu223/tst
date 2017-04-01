@@ -35,7 +35,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		'updated_dt',  
         array(            // display a column with "view", "update" and "delete" buttons
          'class'=>'CButtonColumn',
-			'template'=>'{view}{update}{push}',
+			'template'=>'{view}{update}{publish}{push}',
 			'buttons'=>array
     		(
 				'update' => array
@@ -66,6 +66,17 @@ $this->widget('zii.widgets.grid.CGridView', array(
 					'options' => array(
 						'title'=>'Send push notification',
 						'class'=>'btn-push'
+						
+					)
+				),
+				'publish' => array
+				(
+    				'label' => '<i class="fa fa-eye-slash"></i>',
+              	'imageUrl' => false,
+    				'url'=>'Yii::app()->createUrl("newadmin/default/togglepublish", array("id"=>$data->id))',
+					'options' => array(
+						'title'=>'Toggle Status',
+						'class'=>'btn-publish'
 						
 					)
 				)
