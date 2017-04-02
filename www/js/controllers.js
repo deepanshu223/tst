@@ -89,6 +89,38 @@ app.controller('NewsCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','Color'
 		var ref = cordova.InAppBrowser.open(url, '_system', 'location=yes');
 		// use  ref
 	}
+	/*$scope.getAvailabilityScheme = function(url, callback) {
+		var schemeOrPackage;
+		var schemeUrl;
+		// check for appavaialbility plugin
+		if (!window.appAvailability) {
+			callback(url);
+		}
+		// facebook
+		if (url.indexOf('facebook.com/') !== -1) {
+			schemeOrPackage = isAndroid ? 'com.facebook.katana' : 'fb://'
+			schemeUrl = 'fb://page/' + url.split('facebook.com/')[1];
+		}
+		// twitter
+		if (url.indexOf('twitter.com/') !== -1) {
+			schemeOrPackage = isAndroid ? 'com.twitter.android' : 'twitter://'
+			schemeUrl = 'twitter://user?screen_name=' + url.split('twitter.com/')[1];
+		}
+		if (schemeOrPackage && schemeUrl) {
+			window.appAvailability.check(schemeOrPackage, function () {
+				callback(schemeUrl);
+			}, function () {
+				callback(url);
+			});
+		} else {
+			callback(url);
+		}
+	}
+	$scope.openAppLinkSystem = function(url){
+		this.getAvailabilityScheme(url, function (url) {
+			window.open(url, '_system');
+		});
+	}*/
 	$scope.shareArticleImage = function(title,url) {
 		navigator.screenshot.URI(function(error,res){
 		  if(error){
@@ -403,6 +435,8 @@ app.controller('CategoriesCtrl', ['$scope', 'NewsApp', '$state', function($scope
 app.controller('SettingsCtrl', ['$scope','SendPush','Config', function( $scope, SendPush, Config ) {
 	
 	$scope.AndroidAppUrl = Config.AndroidAppUrl;
+	$scope.FacebookUrl = Config.FacebookUrl;
+	$scope.TwitterUrl = Config.TwitterUrl;
 	$scope.AppName = Config.AppName;
 	
 	$scope.pushNot = [];

@@ -1,8 +1,9 @@
 app.constant("Config", {
-  "WebUrl": "http://news.ascian.in/api/",
+  "WebUrl": "https://thestartuptoday.com/api/",
   "AppName" : "The Startup Today",
   "AndroidAppUrl" : "https://play.google.com/store/apps/details?id=com.thestartuptoday.news",
   "FacebookUrl" : "https://www.facebook.com/Thestartuptoday",
+  "TwitterUrl" : "https://www.twitter.com/thestartuptoday",
   "ErrorMessage" : "No more news"
 })
 // config contact

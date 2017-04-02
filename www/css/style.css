@@ -115,3 +115,9 @@ p.byline{
 .bar.bar-positive{
 	background: #ee8585;
 }
+i.icon.ion-social-facebook {
+    width: 24px;
+}
+a.item.item-cat-custom>img {
+    border-radius: 0px;
+}
